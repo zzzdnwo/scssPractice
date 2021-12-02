@@ -1,0 +1,12 @@
+// global scss
+
+// global values
+
+$base-font-size: 12px;
+$base-bg-color: #f2f2f2;
+
+@mixin fontSet($size, $color) {
+    font-size: $size;
+    color: $color;
+}
+

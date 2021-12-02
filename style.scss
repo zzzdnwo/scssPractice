@@ -1,0 +1,57 @@
+@import url("http://hello.com/hello");
+
+
+$color: red;
+$color-primary: skyblue;
+$fontSize: 16px;
+
+$url-sprite: '../img/';
+
+*{list-style: none; margin: 0; padding: 0;}
+h1{
+    color: $color;
+}
+p{
+    color: $color;
+    background: url($url-sprite + 'apple.png') no-repeat;
+}
+.bg{
+    font: {
+        weight: bold;
+        size: $fontSize - 2px;
+    };
+}
+
+/*mixin 사용하라면 @import 사용*/
+@mixin theme ($theme: DarkGray){
+    background-color: $theme; width: 33%; height: 170px; filter:  saturate(0%);
+}
+
+main{display: flex; justify-content: center;}
+.article{ 
+    width: 30%;
+    display:flex;
+    flex-wrap: wrap;
+    padding: 25px;
+    box-sizing: border-box;
+    background: #e9fbd5;
+
+    &__picture--red{
+        @include theme($theme: red);
+    }
+    &__picture--orange{
+        @include theme($theme: orange);
+    }
+    &__picture--yellow{
+        @include theme($theme: yellow);
+    }
+    &__picture--green{
+        @include theme($theme: green);
+    }
+    &__picture--blue{
+        @include theme($theme: blue);
+    }
+    &__picture--purple{
+        @include theme($theme: purple);
+    }
+}

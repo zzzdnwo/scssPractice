@@ -1,0 +1,72 @@
+@charset "UTF-8";
+@import url("http://hello.com/hello");
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: red;
+}
+
+p {
+  color: red;
+  background: url("../img/apple.png") no-repeat;
+}
+
+.bg {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/*mixin 사용하라면 @import 사용*/
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.article {
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 25px;
+  box-sizing: border-box;
+  background: #e9fbd5;
+}
+.article__picture--red {
+  background-color: red;
+  width: 33%;
+  height: 170px;
+  filter: saturate(0%);
+}
+.article__picture--orange {
+  background-color: orange;
+  width: 33%;
+  height: 170px;
+  filter: saturate(0%);
+}
+.article__picture--yellow {
+  background-color: yellow;
+  width: 33%;
+  height: 170px;
+  filter: saturate(0%);
+}
+.article__picture--green {
+  background-color: green;
+  width: 33%;
+  height: 170px;
+  filter: saturate(0%);
+}
+.article__picture--blue {
+  background-color: blue;
+  width: 33%;
+  height: 170px;
+  filter: saturate(0%);
+}
+.article__picture--purple {
+  background-color: purple;
+  width: 33%;
+  height: 170px;
+  filter: saturate(0%);
+}
