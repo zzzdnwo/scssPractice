@@ -55,3 +55,24 @@ main{display: flex; justify-content: center;}
         @include theme($theme: purple);
     }
 }
+
+//extend 사용법 (원래 있는걸 가져오면 A랑 똑같은 이런 개념이면 %쓰면 투명 선택자? 대충 그렇게 생각해서 쓸수있다 아 모르겠다)
+
+%btn{
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 60px;
+    height: 30px;
+    background: gray;
+    color: #000;
+}
+
+.btn-white{
+    @extend %btn;
+    border-radius: 3px;
+}
+
+.btn-red{
+    @extend %btn;
+    opacity: 1;
+}
