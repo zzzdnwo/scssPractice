@@ -27,6 +27,7 @@ $color-base: pink;
 
     & div{
         transition: all 0.5s ease;
+        background-image: url('#{$url-sprite}romero.png');
     }
     & div:hover{
         filter: blur(4px) saturate(.5);
@@ -64,3 +65,13 @@ $colors: (red: red, orange: orange, yellow: yellow, green: green, blue: blue, pu
     }
 }
 
+    .adv__list{
+        display: flex; justify-content: center;
+    }
+
+//scss for문 마지막 요소 뺄라면 through를 to로 바꾸기
+@for $i from 1 through 6 {
+    .adv__list--li#{$i}{
+        width: 50px;height: 50px; background: #000; margin: 10px;
+    }
+}

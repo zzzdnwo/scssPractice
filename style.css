@@ -22,6 +22,7 @@ main {
 }
 .article div {
   transition: all 0.5s ease;
+  background-image: url("../img/romero.png");
 }
 .article div:hover {
   filter: blur(4px) saturate(0.5);
@@ -90,4 +91,51 @@ main {
   height: 170px;
   filter: blur(4px) saturate(0);
   cursor: pointer;
+}
+
+.adv__list {
+  display: flex;
+  justify-content: center;
+}
+
+.adv__list--li1 {
+  width: 50px;
+  height: 50px;
+  background: #000;
+  margin: 10px;
+}
+
+.adv__list--li2 {
+  width: 50px;
+  height: 50px;
+  background: #000;
+  margin: 10px;
+}
+
+.adv__list--li3 {
+  width: 50px;
+  height: 50px;
+  background: #000;
+  margin: 10px;
+}
+
+.adv__list--li4 {
+  width: 50px;
+  height: 50px;
+  background: #000;
+  margin: 10px;
+}
+
+.adv__list--li5 {
+  width: 50px;
+  height: 50px;
+  background: #000;
+  margin: 10px;
+}
+
+.adv__list--li6 {
+  width: 50px;
+  height: 50px;
+  background: #000;
+  margin: 10px;
 }
