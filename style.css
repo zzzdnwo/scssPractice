@@ -6,20 +6,6 @@
   padding: 0;
 }
 
-h1 {
-  color: red;
-}
-
-p {
-  color: red;
-  background: url("../img/apple.png") no-repeat;
-}
-
-.bg {
-  font-weight: bold;
-  font-size: 14px;
-}
-
 /*mixin 사용하라면 @import 사용*/
 main {
   display: flex;
@@ -32,43 +18,13 @@ main {
   flex-wrap: wrap;
   padding: 25px;
   box-sizing: border-box;
-  background: #e9fbd5;
+  background: pink;
 }
-.article__picture--red {
-  background-color: red;
-  width: 33%;
-  height: 170px;
-  filter: saturate(0%);
+.article div {
+  transition: all 0.5s ease;
 }
-.article__picture--orange {
-  background-color: orange;
-  width: 33%;
-  height: 170px;
-  filter: saturate(0%);
-}
-.article__picture--yellow {
-  background-color: yellow;
-  width: 33%;
-  height: 170px;
-  filter: saturate(0%);
-}
-.article__picture--green {
-  background-color: green;
-  width: 33%;
-  height: 170px;
-  filter: saturate(0%);
-}
-.article__picture--blue {
-  background-color: blue;
-  width: 33%;
-  height: 170px;
-  filter: saturate(0%);
-}
-.article__picture--purple {
-  background-color: purple;
-  width: 33%;
-  height: 170px;
-  filter: saturate(0%);
+.article div:hover {
+  filter: blur(4px) saturate(0.5);
 }
 
 .btn-red, .btn-white {
@@ -86,4 +42,52 @@ main {
 
 .btn-red {
   opacity: 1;
+}
+
+.article__picture--red {
+  background: red;
+  width: 33%;
+  height: 170px;
+  filter: blur(4px) saturate(0);
+  cursor: pointer;
+}
+
+.article__picture--orange {
+  background: orange;
+  width: 33%;
+  height: 170px;
+  filter: blur(4px) saturate(0);
+  cursor: pointer;
+}
+
+.article__picture--yellow {
+  background: yellow;
+  width: 33%;
+  height: 170px;
+  filter: blur(4px) saturate(0);
+  cursor: pointer;
+}
+
+.article__picture--green {
+  background: green;
+  width: 33%;
+  height: 170px;
+  filter: blur(4px) saturate(0);
+  cursor: pointer;
+}
+
+.article__picture--blue {
+  background: blue;
+  width: 33%;
+  height: 170px;
+  filter: blur(4px) saturate(0);
+  cursor: pointer;
+}
+
+.article__picture--purple {
+  background: purple;
+  width: 33%;
+  height: 170px;
+  filter: blur(4px) saturate(0);
+  cursor: pointer;
 }

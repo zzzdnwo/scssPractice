@@ -1,26 +1,10 @@
 @import url("http://hello.com/hello");
 
 
-$color: red;
-$color-primary: skyblue;
-$fontSize: 16px;
-
 $url-sprite: '../img/';
 
 *{list-style: none; margin: 0; padding: 0;}
-h1{
-    color: $color;
-}
-p{
-    color: $color;
-    background: url($url-sprite + 'apple.png') no-repeat;
-}
-.bg{
-    font: {
-        weight: bold;
-        size: $fontSize - 2px;
-    };
-}
+
 
 /*mixin 사용하라면 @import 사용*/
 @mixin theme ($theme: DarkGray){
@@ -28,31 +12,24 @@ p{
 }
 
 main{display: flex; justify-content: center;}
+
+$color-base: pink;
+
+//article 안에 &이건 article 이름을 그대로 인용하여 사용할 수 있다.
 .article{ 
     width: 30%;
     display:flex;
     flex-wrap: wrap;
     padding: 25px;
     box-sizing: border-box;
-    background: #e9fbd5;
+    $color-base: red !default;
+    background: $color-base;
 
-    &__picture--red{
-        @include theme($theme: red);
+    & div{
+        transition: all 0.5s ease;
     }
-    &__picture--orange{
-        @include theme($theme: orange);
-    }
-    &__picture--yellow{
-        @include theme($theme: yellow);
-    }
-    &__picture--green{
-        @include theme($theme: green);
-    }
-    &__picture--blue{
-        @include theme($theme: blue);
-    }
-    &__picture--purple{
-        @include theme($theme: purple);
+    & div:hover{
+        filter: blur(4px) saturate(.5);
     }
 }
 
@@ -76,3 +53,14 @@ main{display: flex; justify-content: center;}
     @extend %btn;
     opacity: 1;
 }
+
+$colors: (red: red, orange: orange, yellow: yellow, green: green, blue: blue, purple: purple);
+
+//each는 리스트 변수에서 state 값과 val값 (이름 내가 막 정해도 됨) 가져와서 클래스로 치면 상태값에 state 넣고 속성값에 내용값을 넣어준다.
+
+@each $state, $val in $colors {
+    .article__picture--#{$state} {
+        background: #{$val}; width: 33%; height: 170px; filter: blur(4px) saturate(0); cursor: pointer;
+    }
+}
+
