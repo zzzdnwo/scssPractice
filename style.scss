@@ -1,11 +1,11 @@
-@import url("http://hello.com/hello");
+@import 'global.scss';
 
 
 $url-sprite: '../img/';
 
-*{list-style: none; margin: 0; padding: 0;}
+*{list-style: none; margin: 0; padding: 0; @include scrollbar-default}
 
-
+body{height: 7000px;}
 /*mixin 사용하라면 @import 사용*/
 @mixin theme ($theme: DarkGray){
     background-color: $theme; width: 33%; height: 170px; filter:  saturate(0%);
@@ -55,7 +55,7 @@ $color-base: pink;
     opacity: 1;
 }
 
-$colors: (red: red, orange: orange, yellow: yellow, green: green, blue: blue, purple: purple);
+$colors: (failed: red, orange: orange, yellow: yellow, green: green, sucessed: blue, purple: purple);
 
 //each는 리스트 변수에서 state 값과 val값 (이름 내가 막 정해도 됨) 가져와서 클래스로 치면 상태값에 state 넣고 속성값에 내용값을 넣어준다.
 
@@ -69,9 +69,15 @@ $colors: (red: red, orange: orange, yellow: yellow, green: green, blue: blue, pu
         display: flex; justify-content: center;
     }
 
+
+@mixin size ($w, $h){
+    width: $w;
+    height: $h;
+}
 //scss for문 마지막 요소 뺄라면 through를 to로 바꾸기
 @for $i from 1 through 6 {
-    .adv__list--li#{$i}{
-        width: 50px;height: 50px; background: #000; margin: 10px;
+    .adv__list--item:nth-child(#{$i}){
+        @include size(30px,30px);
+         background: #000; margin: 10px;
     }
 }

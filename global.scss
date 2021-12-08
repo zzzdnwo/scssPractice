@@ -2,6 +2,20 @@
 
 // global values
 
+//스크롤 설정
+
+@mixin scrollbar-default{
+    ::-webkit-scrollbar{
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track{
+        background: #ccc;
+    }
+    ::-webkit-scrollbar-thumb{
+        background: #666;
+    }
+}
+
 $base-font-size: 12px;
 $base-bg-color: #f2f2f2;
 
@@ -9,4 +23,5 @@ $base-bg-color: #f2f2f2;
     font-size: $size;
     color: $color;
 }
+
 
