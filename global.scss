@@ -24,4 +24,6 @@ $base-bg-color: #f2f2f2;
     color: $color;
 }
 
-
+@function column($number, $column, $width){
+    @return $width * ($number/$column)
+}

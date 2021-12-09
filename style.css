@@ -33,8 +33,11 @@ main {
   background: pink;
 }
 .article div {
+  color: pink;
   transition: all 0.5s ease;
   background-image: url("../img/romero.png");
+  width: 33%;
+  height: 170px;
 }
 .article div:hover {
   filter: blur(4px) saturate(0.5);
@@ -45,7 +48,7 @@ main {
   vertical-align: middle;
   min-width: 60px;
   height: 30px;
-  background: gray;
+  background: #d9f2d9;
   color: #000;
 }
 
@@ -59,48 +62,36 @@ main {
 
 .article__picture--failed {
   background: red;
-  width: 33%;
-  height: 170px;
   filter: blur(4px) saturate(0);
   cursor: pointer;
 }
 
 .article__picture--orange {
   background: orange;
-  width: 33%;
-  height: 170px;
   filter: blur(4px) saturate(0);
   cursor: pointer;
 }
 
 .article__picture--yellow {
   background: yellow;
-  width: 33%;
-  height: 170px;
   filter: blur(4px) saturate(0);
   cursor: pointer;
 }
 
 .article__picture--green {
   background: green;
-  width: 33%;
-  height: 170px;
   filter: blur(4px) saturate(0);
   cursor: pointer;
 }
 
 .article__picture--sucessed {
   background: blue;
-  width: 33%;
-  height: 170px;
   filter: blur(4px) saturate(0);
   cursor: pointer;
 }
 
 .article__picture--purple {
   background: purple;
-  width: 33%;
-  height: 170px;
   filter: blur(4px) saturate(0);
   cursor: pointer;
 }

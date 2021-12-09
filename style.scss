@@ -22,12 +22,14 @@ $color-base: pink;
     flex-wrap: wrap;
     padding: 25px;
     box-sizing: border-box;
-    $color-base: red !default;
+    $color-base: pink !default;
     background: $color-base;
 
     & div{
+        @if ($color-base == pink){color: $color-base};
         transition: all 0.5s ease;
         background-image: url('#{$url-sprite}romero.png');
+        width: 33%; height: 170px;
     }
     & div:hover{
         filter: blur(4px) saturate(.5);
@@ -41,7 +43,7 @@ $color-base: pink;
     vertical-align: middle;
     min-width: 60px;
     height: 30px;
-    background: gray;
+    background: saturate(hsl(120, 30%, 90%), 20%);
     color: #000;
 }
 
@@ -61,7 +63,7 @@ $colors: (failed: red, orange: orange, yellow: yellow, green: green, sucessed: b
 
 @each $state, $val in $colors {
     .article__picture--#{$state} {
-        background: #{$val}; width: 33%; height: 170px; filter: blur(4px) saturate(0); cursor: pointer;
+        background: #{$val}; filter: blur(4px) saturate(0); cursor: pointer;
     }
 }
 
@@ -78,6 +80,7 @@ $colors: (failed: red, orange: orange, yellow: yellow, green: green, sucessed: b
 @for $i from 1 through 6 {
     .adv__list--item:nth-child(#{$i}){
         @include size(30px,30px);
-         background: #000; margin: 10px;
+        background: #000; margin: 10px;
     }
 }
+
