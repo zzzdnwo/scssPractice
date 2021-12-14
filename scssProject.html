@@ -53,5 +53,20 @@
     </footer>
     <div class="btn-white"></div>
     <div class="btn-red"></div>
+    <script>
+        let adv = document.querySelector('.adv__list');
+
+        adv.addEventListener("click",event =>{
+            console.log(event);
+            ans = confirm("지우겠습니까?");
+            if(ans == true){
+                alert('지워드렸습니다.');
+                event.target.remove();
+            }else{
+                alert('싫습니다.');
+                event.target.remove();
+            }
+        });
+    </script>
 </body>
 </html>

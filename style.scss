@@ -55,6 +55,8 @@ $color-base: pink;
 .btn-red{
     @extend %btn;
     opacity: 1;
+    background: red;
+    cursor: pointer;
 }
 
 $colors: (failed: red, orange: orange, yellow: yellow, green: green, sucessed: blue, purple: purple);

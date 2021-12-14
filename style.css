@@ -58,6 +58,8 @@ main {
 
 .btn-red {
   opacity: 1;
+  background: red;
+  cursor: pointer;
 }
 
 .article__picture--failed {
