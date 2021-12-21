@@ -16,6 +16,7 @@
 
 body {
   height: 7000px;
+  background: aliceblue;
 }
 
 /*mixin 사용하라면 @import 사용*/
@@ -25,7 +26,7 @@ main {
 }
 
 .article {
-  width: 30%;
+  width: calc( 50% - 20% );
   display: flex;
   flex-wrap: wrap;
   padding: 25px;
@@ -38,9 +39,17 @@ main {
   background-image: url("../img/romero.png");
   width: 33%;
   height: 170px;
+  position: relative;
 }
 .article div:hover {
   filter: blur(4px) saturate(0.5);
+}
+.article div::after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
 }
 
 .btn-red, .btn-white {
@@ -151,6 +160,7 @@ main {
   content: "Chher gub";
 }
 
+/*wave 관련 css*/
 .box {
   width: 300px;
   height: 300px;

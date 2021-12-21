@@ -14,7 +14,7 @@ $content: "Hello World!" !default; // 재할당 X
 
 *{list-style: none; margin: 0; padding: 0; @include scrollbar-default}
 
-body{height: 7000px;}
+body{$color-choice: aliceblue !default; height: 7000px; background: $color-choice;}
 /*mixin 사용하라면 @import 사용*/
 @mixin theme ($theme: DarkGray){
     background-color: $theme; width: 33%; height: 170px; filter:  saturate(0%);
@@ -24,9 +24,10 @@ main{display: flex; justify-content: center;}
 
 $color-base: pink;
 
+@debug string.unquote("가나다라");
 //article 안에 &이건 article 이름을 그대로 인용하여 사용할 수 있다.
 .article{ 
-    width: 30%;
+    width: calc( 50% - 20% );
     display:flex;
     flex-wrap: wrap;
     padding: 25px;
@@ -39,10 +40,12 @@ $color-base: pink;
         transition: all 0.5s ease;
         background-image: url('#{$url-sprite}romero.png');
         width: 33%; height: 170px;
+        position: relative;
     }
     & div:hover{
         filter: blur(4px) saturate(.5);
     }
+    & div::after{position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); content: '';}
 }
 
 //extend 사용법 (원래 있는걸 가져오면 A랑 똑같은 이런 개념이면 %쓰면 투명 선택자? 대충 그렇게 생각해서 쓸수있다 아 모르겠다)
@@ -95,6 +98,8 @@ $colors: (failed: red, orange: orange, yellow: yellow, green: green, sucessed: b
     }
 }
 
+
+/*wave 관련 css*/
 .box{width: 300px; height: 300px; border-radius: 5px; box-shadow: 0 2px 30px rgba(#000, .2); background: lighten(#f0f4c3, 10%); position: relative; overflow: hidden; transform: translate3d(0, 0, 0);}
 
 .wave{opacity: .4; position: absolute; top: 3%; left: 50%; background: #0af; width: 500px; height: 500px; margin-left: -250px; margin-top: -250px; transform-origin: 50% 48%; border-radius: 43%; animation: drift 3000ms infinite linear;}

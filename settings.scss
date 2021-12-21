@@ -1,0 +1,33 @@
+
+
+@mixin icon($url){
+	&::after{
+    	content:$url;
+        @content;
+    }
+}
+.box1{
+	@include icon("image/icon1.png");
+}
+.box2{
+	@include icon("image/icon2.png"){
+    	display:block;
+        position:absolute;
+        width:100px;
+        height:100px;
+    };
+}
+
+/* Compile
+
+    .box1::after{
+        content:"image/icon1.png";
+    }
+    .box2::after{
+        content:"image/icon2.png";
+        display:block;
+        position:block;
+        width:100px;
+        height:100px;
+    }
+*/
