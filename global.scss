@@ -19,11 +19,16 @@
 $base-font-size: 12px;
 $base-bg-color: #f2f2f2;
 
-@mixin fontSet($size, $color) {
-    font-size: $size;
+// ...(가변인수)는 내가 입력할 인수가 불확실할때 사용가능한데 끝에만 사용 가능
+@mixin fontSet($size, $color...) {
+    font-size: $size + px;
     color: $color;
 }
 
 @function column($number, $column, $width){
-    @return $width * ($number/$column)
+    @return $width * ($number/$column);
+}
+
+.box{
+    @include fontSet(1,yellow,green,pink,bold);
 }

@@ -1,3 +1,4 @@
-body {
-  background: #000;
+.box {
+  font-size: 1px;
+  color: yellow, green, pink, bold;
 }
